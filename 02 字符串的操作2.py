@@ -14,5 +14,37 @@ r = redis.Redis(connection_pool=redis_pool)
 # 当键不存在时才会执行的操作
 # r.set('age', 31)
 # r.set('age', 32, nx=True)
-r.setnx('age', 33)
-print(r.get('age'))
+# r.setnx('age', 33)
+
+# 设置字符串5s后过期
+# r.set('name', 'niu', ex=5)
+# r.setex('name', 10, 'niu')
+
+# 设置字符串对象5ms后过期
+# r.set('name', 'niu', px=5)
+# r.psetex('name', 5, 'niu')
+
+# 批量设置字符串对象
+# r.mset({'name': 'niu', 'age': 33})
+
+# 批量获取字符串对象，返回值是个列表
+# print(r.mget(['name', 'age']))
+
+# 计算字符串对象的字节长度
+# print(r.strlen('name'))
+
+# 数字字符串自增，未设置时默认自增步长为1
+# r.incr('age', 3)
+# r.incr('age2', 4)
+
+# 数字字符串自减
+# r.decr('age', 3)
+# r.decr('age3')  # 默认自增步长为-1
+
+# 删除字符串对象
+# r.delete('age')
+
+# 查看设置的内容
+# print(r.get('age'))
+# print(r.get('age3'))
+# print(r.get('name'))
