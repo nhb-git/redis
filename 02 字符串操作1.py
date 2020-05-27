@@ -43,6 +43,9 @@ r = redis.Redis(connection_pool=r_pool)
 # r.decr('age')
 # r.decr('age', 3)
 
+# 删除字符串对象
+# print(r.get('name1'))
+# r.delete('name1')
 # 获取对象
 # print(r.get('age'))
 # print(r.get('name1'))
