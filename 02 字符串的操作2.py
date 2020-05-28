@@ -17,7 +17,7 @@ r = redis.Redis(connection_pool=redis_pool)
 # r.setnx('age', 33)
 
 # 设置字符串5s后过期
-# r.set('name', 'niu', ex=5)
+# r.set('name', 'niu', ex=0.5)
 # r.setex('name', 10, 'niu')
 
 # 设置字符串对象5ms后过期
