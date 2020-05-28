@@ -14,7 +14,7 @@ r = redis.Redis(connection_pool=redis_pool)
 # r.hset('infos', 'name', 'niu')
 
 # 批量写入哈希对象的键+值
-# r.hmset('infos1', {'name': 'niu', 'age': 30})
+r.hmset('infos1', {'name': 'niu', 'age': 30})
 
 # 批量获取哈希对象中的某几个键值
 # print(r.hmget('infos1', 'name', 'age'))
@@ -34,5 +34,13 @@ r = redis.Redis(connection_pool=redis_pool)
 # 获取哈希对象所有的值
 # print(r.hvals('infos1'))
 
-# 判断哈希对象中是否存在指定的键
+# 判断哈希对象中是否存在指定的键，只能指定单个键
 # print(r.hexists('infos1', 'name'))
+
+# 删除hash对象中的某一个键值
+# r.hdel('infos1', 'name')
+# print(r.hgetall('infos1'))
+
+# 生成器获取大哈希对象的键值
+# for item in r.hscan_iter('infos1'):
+#     print(item)
