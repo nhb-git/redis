@@ -10,7 +10,7 @@ import redis
 redis_pool = redis.ConnectionPool(host='192.168.137.131', port=6379, password='123456')
 r = redis.Redis(connection_pool=redis_pool)
 
-# 创建哈希兑下，哈希对象名称，键+值
+# 创建哈希对象，哈希对象名称，键+值
 # r.hset('infos', 'name', 'niu')
 
 # 批量写入哈希对象的键+值
