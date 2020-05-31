@@ -7,7 +7,7 @@ import redis
 
 
 # 建立redis对象
-connection_pool_obj = redis.ConnectionPool(host='192.168.137.128', port=6379, password='123456')
+connection_pool_obj = redis.ConnectionPool(host='192.168.137.130', port=6379, password='123456')
 redis_obj = redis.Redis(connection_pool=connection_pool_obj)
 
 # 新建一个链表对象，添加的顺序不一定和链表对象中的顺序一致
